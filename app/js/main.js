@@ -2,34 +2,63 @@
 (function() {
   var app, calcCtrl, loginCtrl;
 
-  app = angular.module("fixApp", ["ngRoute"]);
+  app = angular.module('fixApp', ['ngRoute']);
+
+  loginCtrl = (function() {
+    function loginCtrl($scope, $location, $rootScope) {
+      this.user = "admin";
+      this.loginError = "";
+      $rootScope.loggedUser = null;
+      this.click = function() {
+        console.log(this.pass);
+        if (this.user === "admin" && this.pass === "asdf") {
+          console.log("haha");
+          $rootScope.loggedUser = "admin";
+          return $location.path("/calc");
+        } else {
+          return this.loginError = "Введите admin/asdf";
+        }
+      };
+    }
+
+    return loginCtrl;
+
+  })();
+
+  calcCtrl = (function() {
+    function calcCtrl($scope, $location, $rootScope) {}
+
+    return calcCtrl;
+
+  })();
 
   app.config([
     "$routeProvider", function($routeProvider) {
       return $routeProvider.when("/login", {
         templateUrl: "partials/login.html",
-        controller: loginCtrl
+        controller: 'loginCtrl',
+        controllerAs: 'login'
+      }).when("/calc", {
+        templateUrl: "partials/calc.html",
+        controller: 'calcCtrl',
+        controllerAs: 'calc'
       }).otherwise({
         redirectTo: "/login"
       });
     }
-  ]);
+  ]).run(function($rootScope, $location) {
+    return $rootScope.$on('$routeChangeStart', function(event, next) {
+      if ($rootScope.loggedUser === null) {
+        if (next.templateUrl !== "partials/login.html") {
+          return $location.path("/login");
+        }
+      }
+    });
+  });
 
-  app.controller("loginCtrl", loginCtrl = (function() {
-    function loginCtrl() {}
+  app.controller("loginCtrl", ['$scope', '$location', '$rootScope', loginCtrl]);
 
-    return loginCtrl;
-
-  })());
-
-  app.controller("calcCtrl", calcCtrl = (function() {
-    function calcCtrl() {}
-
-    return calcCtrl;
-
-  })());
-
-  angular.bootstrap(document, ["fixApp"]);
+  app.controller("calcCtrl", ['$scope', '$location', '$rootScope', calcCtrl]);
 
 }).call(this);
 

@@ -1,9 +1,9 @@
 {
   "version": 3,
   "file": "scripts.js",
-  "sourceRoot": "..\\..",
+  "sourceRoot": "",
   "sources": [
-    "gulp\\tasks\\scripts.coffee"
+    "scripts.coffee"
   ],
   "names": [],
   "mappings": ";AAAA;AAAA,MAAA;;EAAA,IAAA,GAAO,OAAA,CAAQ,MAAR;;EACP,MAAA,GAAS,OAAA,CAAQ,aAAR;;EACT,WAAA,GAAc,OAAA,CAAQ,cAAR;;EAEd,MAAA,GAAS,WAAW,CAAC;;EAErB,IAAI,CAAC,IAAL,CAAU,eAAV,EAA2B,SAAA;WAC1B,IAAI,CAAC,GAAL,CAAS,aAAT,CACC,CAAC,IADF,CACO,MAAA,CAAO,SAAP,CADP,CAEE,CAAC,IAFH,CAEQ,IAAI,CAAC,IAAL,CAAU,UAAV,CAFR,CAGE,CAAC,IAHH,CAGQ,MAAA,CAAO;MAAE,MAAA,EAAQ,IAAV;KAAP,CAHR;EAD0B,CAA3B;AANA"

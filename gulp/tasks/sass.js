@@ -19,7 +19,7 @@
       style: 'expanded',
       sourceComments: 'map',
       errLogToConsole: true,
-      includePaths: './bower_components'
+      includePaths: './app/bower_components'
     })).pipe(sourcemaps.write()).pipe(gulp.dest('./build/css'));
   });
 
