@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "fonts.js",
+  "sourceRoot": "..\\..",
+  "sources": [
+    "gulp\\tasks\\fonts.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,IAAA,GAAO,OAAA,CAAQ,MAAR;;EACP,WAAA,GAAc,OAAA,CAAQ,cAAR;;EAEd,MAAA,GAAS,WAAW,CAAC;;EAErB,IAAI,CAAC,IAAL,CAAU,OAAV,EAAmB,SAAA;WAClB,IAAI,CAAC,GAAL,CAAS,gDAAT,CACC,CAAC,IADF,CACO,IAAI,CAAC,IAAL,CAAU,SAAV,CADP,CAEC,CAAC,IAFF,CAEO,MAAA,CAAO;MAAE,MAAA,EAAQ,IAAV;KAAP,CAFP;EADkB,CAAnB;AALA"
+}
