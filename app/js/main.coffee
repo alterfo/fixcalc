@@ -1,25 +1,5 @@
 app = angular.module 'fixApp', ['ngRoute']
 
-class loginCtrl
-  constructor: ($scope, $location, $rootScope) ->
-    @user = "admin"
-    @loginError = ""
-    $rootScope.loggedUser = null
-
-    @click = ->
-      console.log @pass
-      if @user is "admin" and @pass is "asdf"
-        console.log "haha"
-        $rootScope.loggedUser = "admin"
-        $location.path "/calc"
-      else
-        @loginError = "Введите admin/asdf"
-
-class calcCtrl
-  constructor: ($scope, $location, $rootScope) ->
-
-
-
 app.config ["$routeProvider", ($routeProvider) ->
 
       $routeProvider
@@ -44,6 +24,18 @@ app.config ["$routeProvider", ($routeProvider) ->
 
 
 
-app.controller "loginCtrl",['$scope', '$location', '$rootScope', loginCtrl ]
+app.controller "loginCtrl", ['$scope', '$location', '$rootScope', ($scope, $location, $rootScope) ->
 
-app.controller "calcCtrl",['$scope', '$location', '$rootScope', calcCtrl ]
+  $scope.email = "admin@admin.ru"
+  $scope.pass = "asdf"
+
+  $scope.submit = ->
+      $rootScope.loggedUser = "admin"
+      $location.path "/calc"
+      return
+  return
+]
+
+app.controller "calcCtrl", ['$scope', '$location', '$rootScope', ($scope, $location, $rootScope) ->
+
+]

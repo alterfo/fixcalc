@@ -1,15 +1,15 @@
 
 .row.vcenter
     .large-4.large-offset-4.columns
-        h1 {{login.loginError}}
-        form
+        p.hint Подсказка: admin@admin.ru/asdf
+        form(name="loginForm", ng-submit="submit()")
             .row
                 .large-12.columns
                     label Логин
-                        input(type="text", ng-model="login.user" placeholder="Введите логин")
+                        input(type="email", ng-model="email", placeholder="Введите email", ng-pattern="/admin\@admin\.ru/", required)
             .row
                 .large-12.columns
                     label Пароль
-                        input(type="password", ng-model="login.pass")
+                        input(type="password", ng-model="pass", ng-pattern="/asdf/", required)
             .row
-                input.button(type="button", ng-click="login.click()", value="Сабмит")
+                input.button(type="submit", ng-disabled="loginForm.$invalid", value="Войти" )
